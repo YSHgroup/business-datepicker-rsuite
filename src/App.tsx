@@ -5,6 +5,8 @@ import { Container, Header, Content, Sidebar, Footer, Button } from "rsuite";
 import { CustomProvider } from "rsuite";
 import "./styles/global.less";
 import BusinessDatePicker from "./components/BusinessDatePicker";
+import SelectedRange from "./components/SelectedRange";
+import SeletedRangeContext  from "./contexts";
 
 function App() {
   const [theme, setTheme] = useState<"light" | "dark">("light");
@@ -13,13 +15,18 @@ function App() {
   };
   return (
     <CustomProvider theme={theme}>
-      <Container>
+      <SeletedRangeContext>
+        <Container>
         <Header>Business DatePicker</Header>
         <Button onClick={toggleTheme}>Toggle Theme</Button>
         <Content>
           <BusinessDatePicker></BusinessDatePicker>
+      <SelectedRange />
+
         </Content>
       </Container>
+      </SeletedRangeContext>
+      
     </CustomProvider>
   );
 }
