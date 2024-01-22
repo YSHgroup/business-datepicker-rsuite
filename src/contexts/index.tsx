@@ -14,8 +14,8 @@ export const useSelectedRangeContext = () => useContext(SeletedRangeContext)
 // const selectedRangeState = {selectedRange: { weekdays: [""], weekends: [""] } , setSelectedRange: () => {}}
 export default function index({children}:{children: React.ReactNode}) {
   const [selectedRange, setSelectedRange] = useState<SelectedRange>({
-    weekdays: [""],
-    weekends: [""],
+    weekdays: [],
+    weekends: [],
   });
   return (
     <SeletedRangeContext.Provider value={{selectedRange, setSelectedRange}}>

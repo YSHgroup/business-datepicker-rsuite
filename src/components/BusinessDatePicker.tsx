@@ -1,12 +1,10 @@
-import React from "react";
-import { DateRangePicker, Stack, Button } from "rsuite";
+import { DateRangePicker, Stack } from "rsuite";
 
 import subDays from "date-fns/subDays";
 import { type DateRange, type RangeType } from "../types";
 import { useSelectedRangeContext } from "../contexts";
 
 const BusinessDatePicker = () => {
-  // const [selectedRange, setSelectedRange] = React.useState<{ weekdays: string[], weekends: string[] }>()
   const { setSelectedRange } = useSelectedRangeContext();
 
   const selecteRange = (value: DateRange | null) => {
@@ -51,25 +49,18 @@ const BusinessDatePicker = () => {
       currentDate.setDate(currentDate.getDate() + 1);
     }
     setSelectedRange({ weekdays, weekends });
-    // return { weekdays, weekends };
   }
 
   return (
     <Stack direction="column" spacing={8} alignItems="flex-start">
       <DateRangePicker
         placement={"rightStart"}
-        // open
-        // showOneCalendar
         ranges={predefinedRanges}
         placeholder="Calendar"
         style={{ width: 300 }}
         onChange={selecteRange}
-        onShortcutClick={(shortcut, event) => {
-          console.log(shortcut);
-        }}
         onSelect={handleSelect}
-        onClean={() => setSelectedRange({ weekdays: [""], weekends: [""] })}
-        // shouldDisableDate={isWeekend}
+        onClean={() => setSelectedRange({ weekdays: [], weekends: [] })}
       />
     </Stack>
   );
