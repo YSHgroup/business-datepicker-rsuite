@@ -1,0 +1,134 @@
+:root {
+  .rs-container {
+    background-color: var(--rs-bg-default);
+  color: var(--rs-text-default);
+    p {
+      margin: 5px;
+      background-color: var(--rs-bg-default);
+  color: var(--rs-text-default);
+    }
+    ul {
+      margin-left: 100px;
+      text-decoration: none;
+      list-style: none;
+    }
+    li {
+      line-height: 30px;
+      background-color: var(--rs-bg-default);
+  color: var(--rs-text-default);
+    }
+    h1, h2, h3, h4, h5 {
+      margin: 3px;
+    }
+    &:first-child {
+      min-height: 100vh;
+    }
+    .rs-header,
+    .rs-content,
+    .rs-footer,
+    .rs-sidebar {
+      background-color: #3498ff;
+      color: #fff;
+      text-align: center;
+    }
+
+    .rs-header,
+    .rs-footer {
+      line-height: 56px;
+      background-color: #59afff;
+    }
+    .rs-content {
+      line-height: 120px;
+      background-color: #80ddff;
+      .rs-stack {
+        
+    padding: 5rem
+      }
+    }
+    .rs-sidebar {
+      line-height: 120px;
+    }
+  }
+
+  .rs-calendar-table-row{
+    .rs-calendar-table-cell:first-child, .rs-calendar-table-cell:last-child {
+      color: var(--rs-text-disabled);
+      // cursor: not-allowed;
+      // * {
+      //   cursor: not-allowed;
+      // }
+      &::before{
+        display: none;
+      }
+    }
+  }
+
+  .rs-calendar-table-cell-disabled {
+    &::before{
+      display: none;
+    }
+    .rs-calendar-table-cell-content{
+
+      text-decoration: none;
+    }
+  }
+}
+
+.show-fake-browser {
+  border: 1px solid #e5e5ea;
+  box-shadow: 0 0.1em 0.5em 0 rgba(0, 0, 0, 0.28);
+  border-radius: 4px;
+  background-color: #f7f7fa;
+
+  &.sidebar-page {
+    .rs-sidebar {
+      height: 700px;
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.12), 0 0 10px rgba(0, 0, 0, 0.06);
+    }
+    .rs-sidenav {
+      flex: 1 1 auto;
+      width: 100%;
+
+      &-collapse-in {
+        overflow-y: auto;
+      }
+    }
+    .rs-header {
+      padding: 0 20px;
+    }
+
+    .rs-content {
+      padding: 20px;
+      margin: 20px;
+      background-color: #f7f7fa;
+    }
+    .nav-toggle {
+      border-top: 1px solid #e5e5ea;
+    }
+  }
+  &.navbar-page {
+    .rs-content {
+      padding: 20px;
+      margin: 20px;
+      height: 500px;
+      background-color: #f7f7fa;
+    }
+    .rs-footer {
+      padding: 20px;
+    }
+  }
+  &.login-page {
+    .rs-content {
+      padding: 20px;
+      margin: 20px;
+      height: 500px;
+    }
+    .rs-footer {
+      padding: 20px;
+    }
+    .rs-panel {
+      background: #fff;
+      margin-top: 70px;
+    }
+  }
+}
